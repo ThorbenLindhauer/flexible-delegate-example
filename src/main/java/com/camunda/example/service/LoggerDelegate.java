@@ -22,6 +22,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
+import org.camunda.bpm.engine.delegate.Expression;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.model.bpmn.BpmnModelException;
 import org.camunda.bpm.model.bpmn.instance.ExtensionElements;
@@ -36,13 +37,13 @@ import java.util.Map;
 @Component("logger")
 public class LoggerDelegate implements JavaDelegate {
 
-  private String injectedProperty;
+  private Expression injectedProperty;
 
-  public String getInjectedProperty() {
+  public Expression getInjectedProperty() {
     return injectedProperty;
   }
 
-  public void setInjectedProperty(String injectedProperty) {
+  public void setInjectedProperty(Expression injectedProperty) {
     this.injectedProperty = injectedProperty;
   }
 
@@ -86,7 +87,7 @@ public class LoggerDelegate implements JavaDelegate {
   public void executeWith(DelegateExecution exec, String param) {
     log.info("Parameter from executeWith method: {}", param);
 
-    log.info("Injected property: {}", injectedProperty);
+    log.info("Injected property: {}", injectedProperty.getValue(exec));
 
     execute(exec);
   }

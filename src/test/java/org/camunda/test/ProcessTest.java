@@ -34,14 +34,14 @@ public class ProcessTest extends AbstractProcessEngineRuleTest {
   }
 
 
-  @Test
-  public void testFieldInjection() {
-    String fieldValue = "ABC";
-    String fieldName = "injectedProperty";
-
-    FieldDeclaration fieldDeclaration = new FieldDeclaration(fieldName, Expression.class.getName(), new FixedValue(fieldValue));
-    Object target = ReflectUtil.instantiate(TestDelegate.class.getName());
-    ClassDelegateUtil.applyFieldDeclaration(fieldDeclaration, target);
-  }
+//  @Test
+//  public void testFieldInjection() {
+//    String fieldValue = "ABC";
+//    String fieldName = "injectedProperty";
+//
+//    FieldDeclaration fieldDeclaration = new FieldDeclaration(fieldName, Expression.class.getName(), new FixedValue(fieldValue));
+//    Object target = ReflectUtil.instantiate(TestDelegate.class.getName());
+//    ClassDelegateUtil.applyFieldDeclaration(fieldDeclaration, target);
+//  }
 
 }
