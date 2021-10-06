@@ -1,5 +1,3 @@
-# vanilla-camunda-template
+# flexible-delegate-example
 
-This is a template repository to create a plain vanilla CAMUNDA Platform EE Spring Boot project.
-
-This is the best generic starting point!  - Change my mind :)
+Example project showing how to make Java Delegate reusable
